@@ -44,50 +44,50 @@ const getUserWishlist = async (req, res) => {
   }
 };
 
-// const addToWishlist = async (req, res) => {
-//   try {
-//     const userId = req.userId;
-//     const { id, poster_path, name, media_type } = req.body;
+const addToWishlist = async (req, res) => {
+  try {
+    const userId = req.userId;
+    const { id, poster_path, name, media_type } = req.body;
 
-//     const user = await UserModel.findById(userId);
-//     if (!user) {
-//       return res.status(404).send("User not found");
-//     }
+    const user = await UserModel.findById(userId);
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
 
-//     // Duplicate check
-//     if (user.wishlist.find((item) => item.id === id)) {
-//       return res.status(400).json({
-//         message: "Item already in wishlist",
-//         status: "failure",
-//       });
-//     } else {
-//       const wishlistItem = { poster_path, name, id, media_type };
+    // Duplicate check
+    if (user.wishlist.find((item) => item.id === id)) {
+      return res.status(400).json({
+        message: "Item already in wishlist",
+        status: "failure",
+      });
+    } else {
+      const wishlistItem = { poster_path, name, id, media_type };
 
-//       // user.wishlist.push(wishlistItem);
-//       // await user.save({ validateBeforeSave: false });
+      // user.wishlist.push(wishlistItem);
+      // await user.save({ validateBeforeSave: false });
 
-//       await UserModel.findOneAndUpdate(
-//         { _id: userId },
-//         { $push: { wishlist: wishlistItem } },
-//         {
-//           new: true, // Return updated document
-//           upsert: true, // Create document if it doesn't exist
-//         },
-//       );
+      await UserModel.findOneAndUpdate(
+        { _id: userId },
+        { $push: { wishlist: wishlistItem } },
+        {
+          new: true, // Return updated document
+          upsert: true, // Create document if it doesn't exist
+        },
+      );
 
-//       res.status(200).json({
-//         message: "Item added to wishlist",
-//         status: "success",
-//         data: user.wishlist,
-//       });
-//     }
-//   } catch (error) {
-//     res.status(500).json({
-//       message: error.message,
-//       status: "failure",
-//     });
-//   }
-// };
+      res.status(200).json({
+        message: "Item added to wishlist",
+        status: "success",
+        data: user.wishlist,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+      status: "failure",
+    });
+  }
+};
 
 const addToWishlist = async (req, res) => {
   try {
