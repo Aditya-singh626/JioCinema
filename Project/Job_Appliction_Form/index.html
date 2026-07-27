@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job Application Form</title>
+  </head>
+  <link rel="stylesheet" href="./index.css">
+  <body>
+    <div class="form-container">
+      <h2>APPLICATION FORM</h2>
+      <form>
+        <!-- Text Fields -->
+        <label for="name">Full Name</label>
+        <input type="text" id="inp" name="name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="inp" name="email" />
+
+        <label for="age">Age</label>
+        <input type="number" id="inp" name="age" />
+
+        <!-- Dropdowns -->
+        <label for="role">Which option best describes your current role?</label>
+        <select id="role" name="role">
+          <option value="">Select an option</option>
+          <option value="student">Student</option>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="references">Would you like to list references?</label>
+        <select id="references" name="references">
+          <option value="">Select an option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="position"
+          >Which position would you like to apply for?</label
+        >
+        <select id="position" name="position">
+          <option value="">Select an option</option>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Full Stack Developer</option>
+        </select>
+
+        <!-- Checkboxes -->
+        <label>Programming languages known:</label>
+        <div class="checkbox-group">
+          <label
+            ><input type="checkbox" name="languages" value="Java" /> Java</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value="Python" />
+            Python</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value="JavaScript" />
+            JavaScript</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value="C++" /> C++</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value="Swift" />
+            Swift</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value="Ruby" /> Ruby</label
+          >
+          <label
+            ><input type="checkbox" name="languages" value=".NET" /> .NET</label
+          >
+        </div>
+
+        <!-- File Upload -->
+        <label for="resume">Upload Resume (optional)</label>
+        <input type="file" id="resume" name="resume" />
+        <div id="res">Choose File</div>
+
+        <!-- Text Area -->
+        <label for="comments">Any Comments?</label>
+        <textarea id="inp" name="comments" rows="4"></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
