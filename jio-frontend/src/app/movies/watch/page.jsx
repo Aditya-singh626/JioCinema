@@ -41,6 +41,7 @@ const Page = async ({ searchParams }) => {
             <h1 className="text-2xl font-bold">
               {details.name || details.title}
             </h1>
+            <p>{details.overview}</p>
             <WishlistButton
               wishlist={{
                 id: details.id,
