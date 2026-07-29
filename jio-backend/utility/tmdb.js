@@ -162,7 +162,8 @@ async function fetchWithRetry(endpoint) {
       }
 
       // ---------- STEP 3: Convert response to JSON ----------
-      const data = await response.json();
+      const data = response?.response?.results;
+      console.log("data is 'coming like this from the tmdb => ",data);
 
       // ---------- STEP 4: Check if data is actually useful ----------
       // TMDB sometimes sends back an empty "results" array.
