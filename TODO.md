@@ -10,8 +10,3 @@
 - [x] Step 6: Simplify tmdbApi wrapper and exports comments
 
 All comments in `jio-backend/utility/tmdb.js` have been rewritten concisely. No code was changed.
-
-// const lnNameRtrn = fnNameRtrn("Singh");
-// console.log(lnNameRtrn);
-
-// lnNameRtrn();
