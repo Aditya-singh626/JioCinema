@@ -44,3 +44,16 @@ jio-clone/
 │ └── controllers/ # Business logic
 │
 └── README.md
+
+# ⚙️ Setup Instructions
+
+1. Clone the repo
+   bash
+   git clone https://github.com/your-username/jio-clone.git
+   cd jio-clone
+2. Backend Setup
+   bash
+   cd backend
+   npm install
+   Create a .env file:
+
