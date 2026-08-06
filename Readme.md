@@ -56,13 +56,3 @@ jio-clone/
    cd backend
    npm install
    Create a .env file:
-
-# 🔮 Future Improvements
-
-Live streaming integration
-
-User profiles
-
-Subscription plans
-
-Recommendation engine
