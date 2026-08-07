@@ -113,8 +113,9 @@ async function fetchWithRetry(endpoint) {
       }
 
       // Parse response
-      const data = response?.response?.results;
-      console.log("data is 'coming like this from the tmdb => ", data);
+      const data = await response.json();
+      // to check the data is coming or not
+      // console.log("data is 'coming like this from the tmdb => ", data);
 
       // Validate data - retry if empty results
       const hasValidResults =

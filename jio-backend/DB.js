@@ -44,7 +44,7 @@ const MovieRouter = require("./Routers/MovieRouter");
 const TvShowsRouter = require("./Routers/TvRouter");
 const DiscoverRouter = require("./Routers/DiscoverRouter");
 const UserRouter = require("./Routers/UserRouter");
-// const VideoRouter = require("./Routers/VideoRouter");
+const VideoRouter = require("./Routers/VideoRouter");
 // const PaymentRouter = require("./Routers/PaymentRouter");
 
 // Router middleware
@@ -53,7 +53,7 @@ app.use("/api/movies", MovieRouter);
 app.use("/api/tv", TvShowsRouter);
 app.use("/api/discover", DiscoverRouter);
 app.use("/api/user", UserRouter);
-// app.use("/api/video", VideoRouter);
+app.use("/api/video", VideoRouter);
 // app.use("/api/payment", PaymentRouter);
 
 // Conditional DB connection and server startup

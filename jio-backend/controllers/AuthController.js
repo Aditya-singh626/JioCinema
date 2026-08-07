@@ -126,7 +126,7 @@ async function resetPasswordHandler(req, res) {
     // remove the otp from the user
     user.otp = undefined;
     user.otpExpiry = undefined;
-    await user.save();
+    await user.save({ validateBeforeSave: false });
     res
       .clearCookie("jwt", {
         httpOnly: true,
