@@ -85,15 +85,24 @@ const getThumbnail = async (req, res) => {
       "thumbnails",
       `${videoId}.png`,
     );
-
-    // if (!fs.existsSync(thumbnailPath)) {
-    //   await generateThumbnailUtil(videoId);
-    // }
-
-    // Send the thumbnail
-    res.sendFile(thumbnailPath);
+    const defaultThumbnailPath = path.join(
+      __dirname,
+      "..",
+      "media",
+      "thumbnails",
+      "default.png",
+    );
+    res.sendFile(thumbnailPath,(err)=>{
+      if(err){
+        res.sendFile(defaultThumbnailPath);
+      }
+    })
   } catch (err) {
-    console.error("Error fetching thumbnail:", err.message);
+    console.error("Error fetching thumbnail:", err);
+    res.status(500).json({
+      status: "error",
+      message: "Failed to fetch thumbnail",
+    });
   }
 };
 module.exports = {
